@@ -14,6 +14,13 @@ We present Klear-Reasoner, a model with long reasoning capabilities that demonst
 --- -->
 
 ## 📌 Overview
+
+<div align="center">
+<img src="./docker/main_result.png" width="100%"/>
+
+<sub>Benchmark accuracy of Klear-Reasoner-8B on AIME 2024/2025 (avg@64), LiveCodeBench V5 (2024/08/01-2025/02/01, avg@8), and v6 (2025/02/01-2025/05/01, avg@8).</sub>
+</div>
+
 Klear-Reasoner-8B is an 8-billion-parameter reasoning model that achieves **state-of-the-art** performance on challenging **math and coding benchmarks**:
 
 | Benchmark | AIME 2024 | AIME 2025 | LiveCodeBench V5 | LiveCodeBench V6 |
