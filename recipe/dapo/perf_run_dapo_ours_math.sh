@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-export http_proxy=http://oversea-squid1.jp.txyun:11080 https_proxy=http://oversea-squid1.jp.txyun:11080 no_proxy=localhost,127.0.0.1,localaddress,localdomain.com,internal,corp.kuaishou.com,test.gifshow.com,staging.kuaishou.com 
 export NCCL_DEBUG=INFO
 export NCCL_IB_DISABLE=0
 export NCCL_IB_GID_INDEX=3
