@@ -122,6 +122,15 @@ ray start --address='10.94.16.4:6379'
 bash recipe/dapo/perf_run_dapo_ours_math.sh # For Math RL
 bash recipe/dapo/perf_run_dapo_ours_code.sh # For Code RL
 ```
+
+In the startup script, you need to set the following variables:
+```bash
+YOUR_MODEL_PATH="<your_model_path>"
+CKPTS_SAVE_DIR="<ckpts_save_path>"
+YOUR_TRAIN_FILE="<train_data_path>"
+YOUR_TEST_FILE="<test_data_path>"
+```
+
 ---
 
 <!-- ## 🔍 Key Techniques
