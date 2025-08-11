@@ -97,7 +97,7 @@ git clone https://github.com/suu990901/Klear_Reasoner.git
 cd Klear_Reasoner
 pip install -r requirements.txt
 ```
-For the **sandbox**, we used [Firejail](https://github.com/netblue30/firejail). Additionally, we implemented multi-process control based on [Pebble](https://github.com/noxdafox/pebble), which can reclaim all resources allocated to a task upon timeout during execution.
+For the code, we use [Firejail](https://github.com/netblue30/firejail) for the **sandbox** environment. Additionally, we implemented multi-process control based on [Pebble](https://github.com/noxdafox/pebble), which allows us to reclaim all resources allocated to a task when execution times out. For mathematics, we use [math_verify](https://github.com/huggingface/Math-Verify) for judging.
 
 ### Using Ray for Multi-Node Training
 For multi-node training​​, ensure ​​all nodes are started and connected via Ray​​ before executing the training script. Below is a brief setup guide for Ray across multiple machines:
