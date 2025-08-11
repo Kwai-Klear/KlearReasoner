@@ -102,7 +102,7 @@ Let
 
 The **GPPO objective** is  
 
-$$
+```math
 \mathcal{L}^{\text{GPPO}}(\theta) =
 \mathbb{E}_{x\sim\mathcal{D}}\left[
 \frac{1}{\sum_{j=1}^{M} T_j}
@@ -116,7 +116,7 @@ $$
 \bigr)\,\tilde A^{(j)}
 \Bigr)
 \right]
-$$
+
 
 
 - **Forward**: behaves exactly like Clip-Higher.  
