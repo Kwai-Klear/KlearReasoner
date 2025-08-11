@@ -116,12 +116,12 @@ The **GPPO objective** is
 Let $\phi_\theta(a_{j,t},s_{j,t})$ be the policy-gradient vector.  
 The **per-token gradient** is  
 
-![gard](https://latex.codecogs.com/svg.image?\nabla_\theta\mathcal{L}^{\text{GPPO}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}}\left[\frac{1}{\sum_{j=1}^M&space;T_j}\sum_{j=1}^M\sum_{t=1}^{T_j}\mathcal{F}_{j,t}(\theta)\,\phi_\theta(a_{j,t},s_{j,t})\,\tilde&space;A^{(j)}\right])
+![gard](https://latex.codecogs.com/svg.image?\mathcal{F}_{j,t}(\theta)=\begin{cases}1-\varepsilon_l&\text{if}\delta<1-\varepsilon_l\;\text{and}\;\tilde&space;A^{(j)}<0\\[2pt]1&plus;\varepsilon_h&\text{if}\delta>1&plus;\varepsilon_h\;\text{and}\;\tilde&space;A^{(j)}>0\\[2pt]\delta&\text{otherwise(no&space;clipping)}\end{cases})
 
 
 where  
 
-![condtion](https://latex.codecogs.com/svg.image?\mathcal{F}_{j,t}(\theta)=\begin{cases}1-\varepsilon_l&\text{if}\delta<1-\varepsilon_l\;\text{and}\;\tilde&space;A^{(j)}<0\\[2pt]1&plus;\varepsilon_h&\text{if}\delta>1&plus;\varepsilon_h\;\text{and}\;\tilde&space;A^{(j)}>0\\[2pt]\delta&\text{otherwise(no&space;clipping)}\end{cases})
+![condtion](https://latex.codecogs.com/svg.image?\mathcal{F}_{j,t}(\theta)=\begin{cases}\beta_1(1-\varepsilon_l)&\text{if}\delta<1-\varepsilon_l,\;\tilde&space;A^{(j)}<0\\[2pt]\beta_2(1&plus;\varepsilon_h)&\text{if}\delta>1&plus;\varepsilon_h,\;\tilde&space;A^{(j)}>0\\[2pt]\delta&\text{otherwise}\end{cases})
 
 
 - **Bounded** gradients avoid explosion.  
