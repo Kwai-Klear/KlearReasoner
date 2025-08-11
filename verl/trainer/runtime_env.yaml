@@ -1,0 +1,10 @@
+working_dir: ./
+excludes: ["/.git/"]
+env_vars:
+  TORCH_NCCL_AVOID_RECORD_STREAMS: "1"
+  VLLM_ATTENTION_BACKEND: "XFORMERS"
+  VLLM_USE_V1: "0"
+  MONDB_PROJECT_NAME: "code_math"
+  WANDB_MODE: "offline"
+  WANDB_DIR: "/math_sft_cold_start_s2_cma_8k"
+  HYDRA_FULL_ERROR: "1"
