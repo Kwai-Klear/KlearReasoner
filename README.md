@@ -13,6 +13,13 @@ We present Klear-Reasoner, a model with long reasoning capabilities that demonst
 
 --- -->
 
+| Resource | Link |
+|---|---|
+| 🤗 Model Hub | [Klear-Reasoner-8B](https://huggingface.co/Suu/Klear-Reasoner-8B) |
+| 🐛 Issues & Discussions | [GitHub Issues](https://github.com/suu990901/KlearReasoner/issues) |
+| 📧 Contact | suzhenpeng13@163.com |
+
+
 ## 📌 Overview
 
 <div align="center">
