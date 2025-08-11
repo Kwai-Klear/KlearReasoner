@@ -102,22 +102,8 @@ Let
 
 The **GPPO objective** is  
 
-$$ 
-\mathcal{L}^{\text{GPPO}}(\theta)= 
-\mathbb{E}_{x\sim\mathcal{D}}\!\left[ 
-\frac{1}{\sum_{j=1}^{M}T_j} 
-\sum_{j=1}^{M}\sum_{t=1}^{T_j} 
-\min\!\Bigl( 
-\delta\tilde A^{(j)}, 
-\ \text{clip}\!\bigl( 
-\delta,\; 
-\frac{1-\varepsilon_l}{\text{sg}(\delta)}\delta,\; 
-\frac{1+\varepsilon_h}{\text{sg}(\delta)}\delta 
-\bigr)\tilde A^{(j)} 
-\Bigr) 
-\right] 
-$$
 
+![GPPO Loss](https://latex.codecogs.com/svg.image?\mathcal{L}^{\text{GPPO}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}}\!\left[\frac{1}{\sum_{j=1}^{M}T_j}\sum_{j=1}^{M}\sum_{t=1}^{T_j}\min\!\Bigl(\delta\tilde&space;A^{(j)},\;\text{clip}\!\bigl(\delta,\;\frac{1-\varepsilon_l}{\text{sg}(\delta)}\delta,\;\frac{1&plus;\varepsilon_h}{\text{sg}(\delta)}\delta\bigr)\tilde&space;A^{(j)}\Bigr)\right])
 
 
 - **Forward**: behaves exactly like Clip-Higher.  
