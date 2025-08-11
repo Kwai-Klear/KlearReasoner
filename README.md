@@ -70,13 +70,13 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 | MiMo-7B-RL | 68.2 | 55.4 | 35.7 | 57.8 | 49.3 |
 | Skywork-OR1-7B | 70.2 | 54.6 | 35.7 | 47.6 | 42.7 |
 | AceReason-Nemotron-1.1-7B | 72.6 | 64.8 | 42.9 | 57.2 | 52.1 |
-| POLARIS-4B-Preview ♠ | 81.2 | _79.4_ | 58.7 | 58.5† | 53.0† |
+| POLARIS-4B-Preview  | 81.2 | _79.4_ | 58.7 | 58.5† | 53.0† |
 | Qwen3-8B | 76.0 | 67.3 | 44.7† | 57.5 | 48.4† |
-| Deepseek-R1-0528-Distill-8B ♣ | _86.0_ | 76.3 | 61.5 | 61.0† | 51.6† |
-| OpenReasoning-Nemotron-7B ♣ | 84.7 | 78.2 | 63.5 | _65.6_† | _56.3_† |
+| Deepseek-R1-0528-Distill-8B  | _86.0_ | 76.3 | 61.5 | 61.0† | 51.6† |
+| OpenReasoning-Nemotron-7B  | 84.7 | 78.2 | 63.5 | _65.6_† | _56.3_† |
 | Klear-Reasoner-8B-SFT | 75.6 | 70.1 | 57.6 | 58.5 | 49.6 |
 | Klear-Reasoner-8B | 83.2 | 75.6 | 60.3 | 61.6 | 53.1 |
-| *w/ 64K Inference Budget* ♣ | **90.5** | **83.2** | **70.8** | **66.0** | **58.1** |
+| *w/ 64K Inference Budget*  | **90.5** | **83.2** | **70.8** | **66.0** | **58.1** |
 
 > We report the average `pass@1` results (avg@_n_), with all other evaluation metrics following the DeepSeek-R1 assessment framework (temperature=0.6, top_p=0.95).  
 
