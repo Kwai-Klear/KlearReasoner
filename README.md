@@ -109,7 +109,6 @@ The **GPPO objective** is
 - **Forward**: behaves exactly like Clip-Higher.  
 - **Backward**: the fraction $\frac{1\pm\varepsilon}{\text{sg}(\delta)}$ keeps the clipped magnitude **but still propagates** a mild gradient.
 
----
 
 ### Gradient Expression  
 
@@ -127,7 +126,6 @@ where
 - **Bounded** gradients avoid explosion.  
 - **Never zero** → every token contributes to learning.
 
----
 
 ### General Form with Tunable Scaling ($\beta_1$, $\beta_2$)  
 
@@ -137,12 +135,6 @@ For finer-grained control:
 
 Empirically we set $\beta_1 = \beta_2 = 1$.
 
----
-
-### Intuition in One Sentence  
-> GPPO lets the optimizer **feel** the clipped tokens instead of **forgetting** them, stabilizing updates while keeping exploration alive.
-
----
 
 ## 📊 Benchmark Results (Pass@1)
 
