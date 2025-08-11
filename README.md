@@ -1,4 +1,4 @@
-# Klear-Reasoner: 8B Open-Reasoning Model with Gradient-Preserving RL  
+# Klear-Reasoner: Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization
 *Advancing mathematical and programmatic reasoning through long CoT SFT + GPPO*
 
 ---
