@@ -103,7 +103,7 @@ Let
 The **GPPO objective** is  
 
 
-![GPPO Loss](https://latex.codecogs.com/svg.image?\mathcal{L}^{\text{GPPO}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}}\left[\frac{1}{\sum_{j=1}^M&space;T_j}\sum_{j=1}^M\sum_{t=1}^{T_j}\min\!\Bigl(\delta\tilde&space;A^{(j)},\;\text{clip}\!\bigl(\delta,\;\frac{1-\varepsilon_l}{\text{sg}(\delta)}\delta,\;\frac{1&plus;\varepsilon_h}{\text{sg}(\delta)}\delta\bigr)\tilde&space;A^{(j)}\Bigr)\right])
+![GPPO Loss](https://github.com/suu990901/KlearReasoner/blob/main/docker/CodeCogsEqn.svg)
 
 
 - **Forward**: behaves exactly like Clip-Higher.  
@@ -116,12 +116,12 @@ The **GPPO objective** is
 Let $\phi_\theta(a_{j,t},s_{j,t})$ be the policy-gradient vector.  
 The **per-token gradient** is  
 
-![gard](https://latex.codecogs.com/svg.image?\mathcal{F}_{j,t}(\theta)=\begin{cases}1-\varepsilon_l&\text{if}\delta<1-\varepsilon_l\;\text{and}\;\tilde&space;A^{(j)}<0\\[2pt]1&plus;\varepsilon_h&\text{if}\delta>1&plus;\varepsilon_h\;\text{and}\;\tilde&space;A^{(j)}>0\\[2pt]\delta&\text{otherwise(no&space;clipping)}\end{cases})
+![gard](https://github.com/suu990901/KlearReasoner/blob/main/docker/CodeCogsEqn_1.svg)
 
 
 where  
 
-![condtion](https://latex.codecogs.com/svg.image?\mathcal{F}_{j,t}(\theta)=\begin{cases}\beta_1(1-\varepsilon_l)&\text{if}\delta<1-\varepsilon_l,\;\tilde&space;A^{(j)}<0\\[2pt]\beta_2(1&plus;\varepsilon_h)&\text{if}\delta>1&plus;\varepsilon_h,\;\tilde&space;A^{(j)}>0\\[2pt]\delta&\text{otherwise}\end{cases})
+![condtion](https://github.com/suu990901/KlearReasoner/blob/main/docker/CodeCogsEqn_2.svg)
 
 
 - **Bounded** gradients avoid explosion.  
@@ -133,7 +133,7 @@ where
 
 For finer-grained control:  
 
-![general_loss](https://latex.codecogs.com/svg.image?\mathcal{F}_{j,t}(\theta)=\begin{cases}\beta_1(1-\varepsilon_l)&\text{if}\delta<1-\varepsilon_l,\;\tilde&space;A^{(j)}<0\\[2pt]\beta_2(1&plus;\varepsilon_h)&\text{if}\delta>1&plus;\varepsilon_h,\;\tilde&space;A^{(j)}>0\\[2pt]\delta&\text{otherwise}\end{cases})
+![general_loss](https://github.com/suu990901/KlearReasoner/blob/main/docker/CodeCogsEqn_3.svg)
 
 Empirically we set $\beta_1 = \beta_2 = 1$.
 
