@@ -1,5 +1,5 @@
 # Klear-Reasoner: Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization
-*Advancing mathematical and programmatic reasoning through long CoT SFT + GPPO*
+We present Klear-Reasoner, a model with long reasoning capabilities that demonstrates careful deliberation during problem solving, achieving outstanding performance across multiple benchmarks. We investigate two key issues with current clipping mechanisms in RL: Clipping suppresses critical exploration signals and ignores suboptimal trajectories. To address these challenges, we propose **G**radient-**P**reserving clipping **P**olicy **O**ptimization (GPPO) that gently backpropagates gradients from clipped tokens. GPPO not only enhances the model's exploration capacity but also improves its efficiency in learning from negative samples.  Klear-Reasoner exhibits exceptional reasoning abilities in mathematics and programming, **scoring 90.5 on AIME 2024, 83.2 on AIME 2025, 66.0 on LiveCodeBench V5 and 58.1 on LiveCodeBench V6**. 
 
 ---
 
@@ -79,10 +79,6 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 | *w/ 64K Inference Budget* ♣ | **90.5** | **83.2** | **70.8** | **66.0** | **58.1** |
 
 > We report the average `pass@1` results (avg@_n_), with all other evaluation metrics following the DeepSeek-R1 assessment framework (temperature=0.6, top_p=0.95).  
-> LCB stands for LiveCodeBench. By default, we include official performance data provided by model developers when available.  
-> Otherwise, † indicates our evaluation results based on the officially recommended configurations.  
-> Models marked with ♠ indicate a maximum inference length of 96K tokens, while those with ♣ denote a 64K maximum inference length; all other models use a 32K inference length.  
-> The best score on a given dataset is marked in **bold**, and the second best is _underlined_.
 
 
 ---
