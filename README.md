@@ -157,7 +157,7 @@ Empirically we set $\beta_1 = \beta_2 = 1$.
 ## 🧪 Training
 ### Configure the experimental environment
 ```bash
-git clone https://github.com/suu990901/Klear_Reasoner.git
+git clone https://github.com/suu990901/Klear_Reasoner
 cd Klear_Reasoner
 pip install -r requirements.txt
 ```
