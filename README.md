@@ -104,16 +104,16 @@ The **GPPO objective** is
 
 $$
 \mathcal{L}^{\text{GPPO}}(\theta)=
-\mathbb{E}_{x\sim\mathcal{D}}\!\left[
+\mathbb{E}_{x\sim\mathcal{D}}\left[
 \frac{1}{\sum_{j=1}^{M}T_j}
 \sum_{j=1}^{M}\sum_{t=1}^{T_j}
-\min\!\Bigl(
-\delta\tilde A^{(j)},
-\ \text{clip}\!\bigl(
-\delta,\;
-\frac{1-\varepsilon_l}{\text{sg}(\delta)}\delta,\;
-\frac{1+\varepsilon_h}{\text{sg}(\delta)}\delta
-\bigr)\tilde A^{(j)}
+\min\Bigl(
+\delta\,\tilde A^{(j)},
+\ \text{clip}\bigl(
+\delta,\ 
+\frac{1-\varepsilon_l}{\text{sg}(\delta)}\,\delta,\ 
+\frac{1+\varepsilon_h}{\text{sg}(\delta)}\,\delta
+\bigr)\,\tilde A^{(j)}
 \Bigr)
 \right]
 $$
@@ -130,7 +130,7 @@ The **per-token gradient** is
 
 $$
 \nabla_\theta\mathcal{L}^{\text{GPPO}}(\theta)=
-\mathbb{E}_{x\sim\mathcal{D}}\!\left[
+\mathbb{E}_{x\sim\mathcal{D}}\left[
 \frac{1}{\sum_{j=1}^{M}T_j}
 \sum_{j=1}^{M}\sum_{t=1}^{T_j}
 \mathcal{F}_{j,t}(\theta)\,
@@ -144,9 +144,9 @@ where
 $$
 \mathcal{F}_{j,t}(\theta)=
 \begin{cases}
-1-\varepsilon_l &\text{if }\delta<1-\varepsilon_l\ \text{and}\ \tilde A^{(j)}<0\\[4pt]
-1+\varepsilon_h &\text{if }\delta>1+\varepsilon_h\ \text{and}\ \tilde A^{(j)}>0\\[4pt]
-\delta &\text{otherwise (no clipping)}
+1-\varepsilon_l & \text{if }\delta<1-\varepsilon_l\ \text{and}\ \tilde A^{(j)}<0,\\[4pt]
+1+\varepsilon_h & \text{if }\delta>1+\varepsilon_h\ \text{and}\ \tilde A^{(j)}>0,\\[4pt]
+\delta & \text{otherwise (no clipping)}
 \end{cases}
 $$
 
@@ -162,9 +162,9 @@ For finer-grained control:
 $$
 \mathcal{F}_{j,t}(\theta)=
 \begin{cases}
-\beta_1(1-\varepsilon_l) &\text{if }\delta<1-\varepsilon_l,\ \tilde A^{(j)}<0\\[4pt]
-\beta_2(1+\varepsilon_h) &\text{if }\delta>1+\varepsilon_h,\ \tilde A^{(j)}>0\\[4pt]
-\delta &\text{otherwise}
+\beta_1(1-\varepsilon_l) & \text{if }\delta<1-\varepsilon_l,\ \tilde A^{(j)}<0,\\[4pt]
+\beta_2(1+\varepsilon_h) & \text{if }\delta>1+\varepsilon_h,\ \tilde A^{(j)}>0,\\[4pt]
+\delta & \text{otherwise}
 \end{cases}
 $$
 
