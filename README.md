@@ -1,4 +1,4 @@
-# Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization
+# ✨ Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization
 We present Klear-Reasoner, a model with long reasoning capabilities that demonstrates careful deliberation during problem solving, achieving outstanding performance across multiple benchmarks. We investigate two key issues with current clipping mechanisms in RL: Clipping suppresses critical exploration signals and ignores suboptimal trajectories. To address these challenges, we propose **G**radient-**P**reserving clipping **P**olicy **O**ptimization (GPPO) that gently backpropagates gradients from clipped tokens. GPPO not only enhances the model's exploration capacity but also improves its efficiency in learning from negative samples.  Klear-Reasoner exhibits exceptional reasoning abilities in mathematics and programming, **scoring 90.5 on AIME 2024, 83.2 on AIME 2025, 66.0 on LiveCodeBench V5 and 58.1 on LiveCodeBench V6**. 
 
 ---
