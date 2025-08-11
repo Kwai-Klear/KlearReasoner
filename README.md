@@ -103,10 +103,10 @@ Let
 The **GPPO objective** is  
 
 $$
-\mathcal{L}^{\text{GPPO}}(\theta)=
+\mathcal{L}^{\text{GPPO}}(\theta) =
 \mathbb{E}_{x\sim\mathcal{D}}\left[
-\frac{1}{\sum_{j=1}^{M}T_j}
-\sum_{j=1}^{M}\sum_{t=1}^{T_j}
+\frac{1}{\sum_{j=1}^{M} T_j}
+\sum_{j=1}^{M} \sum_{t=1}^{T_j}
 \min\Bigl(
 \delta\,\tilde A^{(j)},
 \ \text{clip}\bigl(
@@ -117,6 +117,7 @@ $$
 \Bigr)
 \right]
 $$
+
 
 - **Forward**: behaves exactly like Clip-Higher.  
 - **Backward**: the fraction $\frac{1\pm\varepsilon}{\text{sg}(\delta)}$ keeps the clipped magnitude **but still propagates** a mild gradient.
@@ -129,26 +130,28 @@ Let $\phi_\theta(a_{j,t},s_{j,t})$ be the policy-gradient vector.
 The **per-token gradient** is  
 
 $$
-\nabla_\theta\mathcal{L}^{\text{GPPO}}(\theta)=
+\nabla_\theta \mathcal{L}^{\text{GPPO}}(\theta) =
 \mathbb{E}_{x\sim\mathcal{D}}\left[
-\frac{1}{\sum_{j=1}^{M}T_j}
-\sum_{j=1}^{M}\sum_{t=1}^{T_j}
+\frac{1}{\sum_{j=1}^{M} T_j}
+\sum_{j=1}^{M} \sum_{t=1}^{T_j}
 \mathcal{F}_{j,t}(\theta)\,
-\phi_\theta(a_{j,t},s_{j,t})\,
+\phi_\theta(a_{j,t}, s_{j,t})\,
 \tilde A^{(j)}
 \right]
 $$
 
+
 where  
 
 $$
-\mathcal{F}_{j,t}(\theta)=
+\mathcal{F}_{j,t}(\theta) =
 \begin{cases}
-1-\varepsilon_l & \text{if }\delta<1-\varepsilon_l\ \text{and}\ \tilde A^{(j)}<0,\\[4pt]
-1+\varepsilon_h & \text{if }\delta>1+\varepsilon_h\ \text{and}\ \tilde A^{(j)}>0,\\[4pt]
+1 - \varepsilon_l & \text{if }\delta < 1 - \varepsilon_l \ \text{and}\ \tilde A^{(j)} < 0,\\[4pt]
+1 + \varepsilon_h & \text{if }\delta > 1 + \varepsilon_h \ \text{and}\ \tilde A^{(j)} > 0,\\[4pt]
 \delta & \text{otherwise (no clipping)}
 \end{cases}
 $$
+
 
 - **Bounded** gradients avoid explosion.  
 - **Never zero** → every token contributes to learning.
