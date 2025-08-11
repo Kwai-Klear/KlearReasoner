@@ -83,7 +83,7 @@ GPPO is a **plug-and-play** replacement for PPO/GRPO that keeps the clipped toke
 
 ---
 
-### 1. Problem with Vanilla Clipping  
+### Problem with Vanilla Clipping  
 Classic importance-ratio clipping (PPO/GRPO) drops all tokens whose ratio  
 $r_t^{(j)}=\pi_\theta/\pi_{\text{old}}$ falls outside $[1-\varepsilon_l,\ 1+\varepsilon_h]$.  
 Two side-effects appear:
@@ -93,7 +93,7 @@ Two side-effects appear:
 
 ---
 
-### 2. GPPO Surrogate Loss (Token-Level GRPO)  
+### GPPO Surrogate Loss (Token-Level GRPO)  
 
 Let  
 - $\delta = r_t^{(j)}(\theta)=\pi_\theta/\pi_{\text{old}}$ (importance ratio)  
@@ -103,7 +103,7 @@ Let
 The **GPPO objective** is  
 
 
-![GPPO Loss](https://latex.codecogs.com/svg.image?\mathcal{L}^{\text{GPPO}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}}\!\left[\frac{1}{\sum_{j=1}^{M}T_j}\sum_{j=1}^{M}\sum_{t=1}^{T_j}\min\!\Bigl(\delta\tilde&space;A^{(j)},\;\text{clip}\!\bigl(\delta,\;\frac{1-\varepsilon_l}{\text{sg}(\delta)}\delta,\;\frac{1&plus;\varepsilon_h}{\text{sg}(\delta)}\delta\bigr)\tilde&space;A^{(j)}\Bigr)\right])
+![GPPO Loss](https://latex.codecogs.com/svg.image?\mathcal{L}^{\text{GPPO}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}}\left[\frac{1}{\sum_{j=1}^M&space;T_j}\sum_{j=1}^M\sum_{t=1}^{T_j}\min\!\Bigl(\delta\tilde&space;A^{(j)},\;\text{clip}\!\bigl(\delta,\;\frac{1-\varepsilon_l}{\text{sg}(\delta)}\delta,\;\frac{1&plus;\varepsilon_h}{\text{sg}(\delta)}\delta\bigr)\tilde&space;A^{(j)}\Bigr)\right])
 
 
 - **Forward**: behaves exactly like Clip-Higher.  
@@ -111,34 +111,17 @@ The **GPPO objective** is
 
 ---
 
-### 3. Gradient Expression  
+### Gradient Expression  
 
 Let $\phi_\theta(a_{j,t},s_{j,t})$ be the policy-gradient vector.  
 The **per-token gradient** is  
 
-$$ 
-\nabla_\theta\mathcal{L}^{\text{GPPO}}(\theta)= 
-\mathbb{E}_{x\sim\mathcal{D}}\!\left[ 
-\frac{1}{\sum_{j=1}^{M}T_j} 
-\sum_{j=1}^{M}\sum_{t=1}^{T_j} 
-\mathcal{F}_{j,t}(\theta) 
-\cdot 
-\phi_\theta(a_{j,t},s_{j,t}) 
-\cdot 
-\tilde A^{(j)} 
-\right] 
-$$
+![gard](https://latex.codecogs.com/svg.image?\nabla_\theta\mathcal{L}^{\text{GPPO}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}}\left[\frac{1}{\sum_{j=1}^M&space;T_j}\sum_{j=1}^M\sum_{t=1}^{T_j}\mathcal{F}_{j,t}(\theta)\,\phi_\theta(a_{j,t},s_{j,t})\,\tilde&space;A^{(j)}\right])
+
 
 where  
 
-$$
-\mathcal{F}_{j,t}(\theta) =
-\begin{cases}
-1 - \varepsilon_l & \text{if }\delta < 1 - \varepsilon_l \ \text{and}\ \tilde A^{(j)} < 0,\\[4pt]
-1 + \varepsilon_h & \text{if }\delta > 1 + \varepsilon_h \ \text{and}\ \tilde A^{(j)} > 0,\\[4pt]
-\delta & \text{otherwise (no clipping)}
-\end{cases}
-$$
+![condtion](https://latex.codecogs.com/svg.image?\mathcal{F}_{j,t}(\theta)=\begin{cases}1-\varepsilon_l&\text{if}\delta<1-\varepsilon_l\;\text{and}\;\tilde&space;A^{(j)}<0\\[2pt]1&plus;\varepsilon_h&\text{if}\delta>1&plus;\varepsilon_h\;\text{and}\;\tilde&space;A^{(j)}>0\\[2pt]\delta&\text{otherwise(no&space;clipping)}\end{cases})
 
 
 - **Bounded** gradients avoid explosion.  
@@ -146,24 +129,17 @@ $$
 
 ---
 
-### 4. General Form with Tunable Scaling ($\beta_1$, $\beta_2$)  
+### General Form with Tunable Scaling ($\beta_1$, $\beta_2$)  
 
 For finer-grained control:  
 
-$$
-\mathcal{F}_{j,t}(\theta)=
-\begin{cases}
-\beta_1(1-\varepsilon_l) & \text{if }\delta<1-\varepsilon_l,\ \tilde A^{(j)}<0,\\[4pt]
-\beta_2(1+\varepsilon_h) & \text{if }\delta>1+\varepsilon_h,\ \tilde A^{(j)}>0,\\[4pt]
-\delta & \text{otherwise}
-\end{cases}
-$$
+![general_loss](https://latex.codecogs.com/svg.image?\mathcal{F}_{j,t}(\theta)=\begin{cases}\beta_1(1-\varepsilon_l)&\text{if}\delta<1-\varepsilon_l,\;\tilde&space;A^{(j)}<0\\[2pt]\beta_2(1&plus;\varepsilon_h)&\text{if}\delta>1&plus;\varepsilon_h,\;\tilde&space;A^{(j)}>0\\[2pt]\delta&\text{otherwise}\end{cases})
 
 Empirically we set $\beta_1 = \beta_2 = 1$.
 
 ---
 
-### 5. Intuition in One Sentence  
+### Intuition in One Sentence  
 > GPPO lets the optimizer **feel** the clipped tokens instead of **forgetting** them, stabilizing updates while keeping exploration alive.
 
 ---
