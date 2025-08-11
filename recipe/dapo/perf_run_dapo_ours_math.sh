@@ -8,7 +8,7 @@ export NCCL_IB_HCA=mlx5
 
 set -xeuo pipefail
 
-SFT_MODEL_PATH="<sft_model_path>"
+YOUR_MODEL_PATH="<your_model_path>"
 CKPTS_SAVE_DIR="<ckpts_save_path>"
 YOUR_TRAIN_FILE="<train_data_path>"
 YOUR_TEST_FILE="<test_data_path>"
@@ -51,7 +51,7 @@ FREEZE_RUNTIME_ENV=${WORKING_DIR}/verl/trainer/runtime_env.yaml
 NNODES=32
 # Paths
 RAY_DATA_HOME=${RAY_DATA_HOME:-"${HOME}/verl"}
-MODEL_PATH=$SFT_MODEL_PATH
+MODEL_PATH=$YOUR_MODEL_PATH
 CKPTS_DIR=$CKPTS_SAVE_DIR
 
 CKPTS_DIR=${CKPTS_DIR}/ckpts/${project_name}/${exp_name}
