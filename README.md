@@ -84,7 +84,7 @@ GPPO is a **plug-and-play** replacement for PPO/GRPO that keeps the clipped toke
 
 ### 1. Problem with Vanilla Clipping
 Classic importance-ratio clipping (PPO/GRPO) drops all tokens whose ratio  
-$$r_t^{(j)}=\pi_\theta/\pi_{\text{old}}$ falls outside $[1-\varepsilon_l,\;1+\varepsilon_h]$$.  
+$$r_t^{(j)}=\pi_\theta/\pi_{\text{old}}$$ falls outside $[1-\varepsilon_l,\;1+\varepsilon_h]$$.  
 Two side-effects appear:
 - **High-entropy exploratory tokens** (large $r$, positive advantage) are killed → less exploration.  
 - **Negative trajectories** (small $r$, negative advantage) are ignored → slower correction.
@@ -99,7 +99,7 @@ Let
 - $$\text{sg}(\cdot)$$ = stop-gradient (detach from back-prop)
 
 The **GPPO objective** is
-
+$$
 \[
 \mathcal{L}^{\text{GPPO}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}}
 \left[
@@ -115,7 +115,7 @@ The **GPPO objective** is
 \Bigr)
 \right]
 \]
-
+$$
 - **Forward**: behaves exactly like Clip-Higher.  
 - **Backward**: the fraction $$\frac{1\pm\varepsilon}{\text{sg}(\delta)}$$ keeps the clipped magnitude **but still propagates** a mild gradient.
 
@@ -125,7 +125,7 @@ The **GPPO objective** is
 
 Let $$\phi_\theta(a_{j,t},s_{j,t})$$ be the policy-gradient vector.  
 The **per-token gradient** is
-
+$$
 \[
 \nabla_\theta\mathcal{L}^{\text{GPPO}}(\theta)=
 \mathbb{E}_{x\sim\mathcal{D}}
@@ -137,9 +137,9 @@ The **per-token gradient** is
 \tilde A^{(j)}
 \right]
 \]
-
+$$
 where
-
+$$
 \[
 \mathcal{F}_{j,t}(\theta)=
 \begin{cases}
@@ -148,7 +148,7 @@ where
 \delta &\text{otherwise (no clipping)}
 \end{cases}
 \]
-
+$$
 - **Bounded** gradients avoid explosion.  
 - **Never zero** → every token contributes to learning.
 
