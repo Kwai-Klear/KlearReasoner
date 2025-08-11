@@ -84,7 +84,7 @@ GPPO is a **plug-and-play** replacement for PPO/GRPO that keeps the clipped toke
 
 ### 1. Problem with Vanilla Clipping
 Classic importance-ratio clipping (PPO/GRPO) drops all tokens whose ratio  
-$r_t^{(j)}=\pi_\theta/\pi_{\text{old}}$ falls outside $[1-\varepsilon_l,\;1+\varepsilon_h]$.  
+$$r_t^{(j)}=\pi_\theta/\pi_{\text{old}}$ falls outside $[1-\varepsilon_l,\;1+\varepsilon_h]$$.  
 Two side-effects appear:
 - **High-entropy exploratory tokens** (large $r$, positive advantage) are killed → less exploration.  
 - **Negative trajectories** (small $r$, negative advantage) are ignored → slower correction.
@@ -94,9 +94,9 @@ Two side-effects appear:
 ### 2. GPPO Surrogate Loss (Token-Level GRPO)
 
 Let  
-- $\delta = r_t^{(j)}(\theta)=\pi_\theta/\pi_{\text{old}}$ (importance ratio)  
-- $\tilde A^{(j)}$ = group-relative advantage  
-- $\text{sg}(\cdot)$ = stop-gradient (detach from back-prop)
+- $$\delta = r_t^{(j)}(\theta)=\pi_\theta/\pi_{\text{old}}$$ (importance ratio)  
+- $$\tilde A^{(j)}$$ = group-relative advantage  
+- $$\text{sg}(\cdot)$$ = stop-gradient (detach from back-prop)
 
 The **GPPO objective** is
 
@@ -117,13 +117,13 @@ The **GPPO objective** is
 \]
 
 - **Forward**: behaves exactly like Clip-Higher.  
-- **Backward**: the fraction $\frac{1\pm\varepsilon}{\text{sg}(\delta)}$ keeps the clipped magnitude **but still propagates** a mild gradient.
+- **Backward**: the fraction $$\frac{1\pm\varepsilon}{\text{sg}(\delta)}$$ keeps the clipped magnitude **but still propagates** a mild gradient.
 
 ---
 
 ### 3. Gradient Expression
 
-Let $\phi_\theta(a_{j,t},s_{j,t})$ be the policy-gradient vector.  
+Let $$\phi_\theta(a_{j,t},s_{j,t})$$ be the policy-gradient vector.  
 The **per-token gradient** is
 
 \[
