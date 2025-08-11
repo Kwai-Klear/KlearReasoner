@@ -81,7 +81,6 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 GPPO is a **plug-and-play** replacement for PPO/GRPO that keeps the clipped tokens **in the computational graph** and lets their gradients flow in a **bounded, controlled** way.
 
----
 
 ### Problem with Vanilla Clipping  
 Classic importance-ratio clipping (PPO/GRPO) drops all tokens whose ratio  
@@ -91,7 +90,6 @@ Two side-effects appear:
 - **High-entropy exploratory tokens** (large $r$, positive advantage) are killed → less exploration.  
 - **Negative trajectories** (small $r$, negative advantage) are ignored → slower correction.
 
----
 
 ### GPPO Surrogate Loss (Token-Level GRPO)  
 
@@ -135,6 +133,7 @@ For finer-grained control:
 
 Empirically we set $\beta_1 = \beta_2 = 1$.
 
+---
 
 ## 📊 Benchmark Results (Pass@1)
 
