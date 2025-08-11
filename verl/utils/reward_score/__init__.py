@@ -70,13 +70,13 @@ def dapo_wi_rllm_compute_score(data_source, solution_str, ground_truth, extra_in
     elif data_source == 'math_longcot':
         from . import math_dapo
         res = math_dapo.compute_score(solution_str, ground_truth, is_longcot=True, is_use_math_verify=False)
-    elif 'math_longcot_math_verify' in data_source:
+    elif 'math_longcot_math_verify' in data_source: # AIME2024(math_longcot_math_verify_aime2024) AIME2025(math_longcot_math_verify_aime2025) TrainingData(math_longcot_math_verify)
         from . import math_dapo
         res = math_dapo.compute_score(solution_str, ground_truth, is_longcot=True, is_use_math_verify=True)
     elif data_source == "coder1":
         from . import code_r1_compute
         res = code_r1_compute.compute_score(solution_str, ground_truth, is_longcot = False)
-    elif data_source == "coder1_longcot":
+    elif "coder1_longcot" in data_source: # LiveCodeBench V5(coder1_longcot_lcbv5) LiveCodeBench V6(coder1_longcot_lcbv6) TrainingData(coder1_longcot)
         from . import code_r1_compute
         res = code_r1_compute.compute_score(solution_str, ground_truth, is_longcot = True)
     elif data_source == 'math_stem':
