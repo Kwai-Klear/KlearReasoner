@@ -109,12 +109,16 @@ On the first node (typically called `node0`), run:
 ray start --head --dashboard-host=0.0.0.0
 ```
 
+Get the IP address of the master node.
+```bash
+MASTER_IP=$(hostname -I | awk '{print $1}')
+```
 #### Step 2: Connect Other Nodes (e.g., node1)
 
 On each additional worker node (e.g., `node1`), run the following, replacing the IP with that of your head node:
 
 ```bash
-ray start --address='10.94.16.4:6379'
+ray start --address=\"$MASTER_IP:6379\"
 ```
 
 ### RL Training
