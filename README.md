@@ -88,18 +88,36 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ---
 
 ## 🧪 Reproducing the Results
-We provide full training scripts & data configs:
-
+### Configure the experimental environment
 ```bash
 git clone https://github.com/suu990901/Klear_Reasoner.git
 cd Klear_Reasoner
 pip install -r requirements.txt
 
-# RL
-bash recipe/dapo/perf_run_dapo_ours_code.sh
+```
+### Using Ray for Multi-Node Training
+For multi-node training​​, ensure ​​all nodes are started and connected via Ray​​ before executing the training script. Below is a brief setup guide for Ray across multiple machines:
+#### Step 1: Start Ray on the Head Node (node0)
 
+On the first node (typically called `node0`), run:
+
+```bash
+ray start --head --dashboard-host=0.0.0.0
 ```
 
+#### Step 2: Connect Other Nodes (e.g., node1)
+
+On each additional worker node (e.g., `node1`), run the following, replacing the IP with that of your head node:
+
+```bash
+ray start --address='10.94.16.4:6379'
+```
+
+### RL Training
+```bash
+bash recipe/dapo/perf_run_dapo_ours_math.sh # For Math RL
+bash recipe/dapo/perf_run_dapo_ours_code.sh # For Code RL
+```
 ---
 
 <!-- ## 🔍 Key Techniques
@@ -127,7 +145,3 @@ bash recipe/dapo/perf_run_dapo_ours_code.sh
 
 <!-- --- -->
 
-<!-- ## 📄 License
-Apache 2.0. See [LICENSE](LICENSE) for details.
-
---- -->
