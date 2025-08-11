@@ -70,10 +70,7 @@ def dapo_wi_rllm_compute_score(data_source, solution_str, ground_truth, extra_in
     elif data_source == 'math_longcot':
         from . import math_dapo
         res = math_dapo.compute_score(solution_str, ground_truth, is_longcot=True, is_use_math_verify=False)
-    elif data_source == 'math_longcot_math_verify':
-        from . import math_dapo
-        res = math_dapo.compute_score(solution_str, ground_truth, is_longcot=True, is_use_math_verify=True)
-    elif data_source == 'math_longcot_math_verify25':
+    elif 'math_longcot_math_verify' in data_source:
         from . import math_dapo
         res = math_dapo.compute_score(solution_str, ground_truth, is_longcot=True, is_use_math_verify=True)
     elif data_source == "coder1":
