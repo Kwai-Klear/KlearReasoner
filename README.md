@@ -122,6 +122,8 @@ ray start --address=\"$MASTER_IP:6379\"
 ```
 
 ### RL Training
+Run the following script on the master node to start the training task.
+
 ```bash
 bash recipe/dapo/perf_run_dapo_ours_math.sh # For Math RL
 bash recipe/dapo/perf_run_dapo_ours_code.sh # For Code RL
