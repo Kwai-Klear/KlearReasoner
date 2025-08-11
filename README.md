@@ -102,20 +102,21 @@ Let
 
 The **GPPO objective** is  
 
-```math
-\mathcal{L}^{\text{GPPO}}(\theta) =
-\mathbb{E}_{x\sim\mathcal{D}}\left[
-\frac{1}{\sum_{j=1}^{M} T_j}
-\sum_{j=1}^{M} \sum_{t=1}^{T_j}
-\min\Bigl(
-\delta\,\tilde A^{(j)},
-\ \text{clip}\bigl(
-\delta,\ 
-\frac{1-\varepsilon_l}{\text{sg}(\delta)}\,\delta,\ 
-\frac{1+\varepsilon_h}{\text{sg}(\delta)}\,\delta
-\bigr)\,\tilde A^{(j)}
-\Bigr)
-\right]
+$$ 
+\mathcal{L}^{\text{GPPO}}(\theta)= 
+\mathbb{E}_{x\sim\mathcal{D}}\!\left[ 
+\frac{1}{\sum_{j=1}^{M}T_j} 
+\sum_{j=1}^{M}\sum_{t=1}^{T_j} 
+\min\!\Bigl( 
+\delta\tilde A^{(j)}, 
+\ \text{clip}\!\bigl( 
+\delta,\; 
+\frac{1-\varepsilon_l}{\text{sg}(\delta)}\delta,\; 
+\frac{1+\varepsilon_h}{\text{sg}(\delta)}\delta 
+\bigr)\tilde A^{(j)} 
+\Bigr) 
+\right] 
+$$
 
 
 
@@ -129,17 +130,18 @@ The **GPPO objective** is
 Let $\phi_\theta(a_{j,t},s_{j,t})$ be the policy-gradient vector.  
 The **per-token gradient** is  
 
+$$ 
+\nabla_\theta\mathcal{L}^{\text{GPPO}}(\theta)= 
+\mathbb{E}_{x\sim\mathcal{D}}\!\left[ 
+\frac{1}{\sum_{j=1}^{M}T_j} 
+\sum_{j=1}^{M}\sum_{t=1}^{T_j} 
+\mathcal{F}_{j,t}(\theta) 
+\cdot 
+\phi_\theta(a_{j,t},s_{j,t}) 
+\cdot 
+\tilde A^{(j)} 
+\right] 
 $$
-\nabla_\theta \mathcal{L}^{\text{GPPO}}(\theta) =
-\mathbb{E}_{x\sim\mathcal{D}}\left[
-\frac{1}{\sum_{j=1}^{M} T_j}
-\sum_{j=1}^{M} \sum_{t=1}^{T_j}
-\mathcal{F}_{j,t}(\theta)\,
-\phi_\theta(a_{j,t}, s_{j,t})\,
-\tilde A^{(j)}
-\right]
-$$
-
 
 where  
 
