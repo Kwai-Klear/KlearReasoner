@@ -90,7 +90,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 ---
 
-## 🧪 Reproducing the Results
+## 🧪 Training
 ### Configure the experimental environment
 ```bash
 git clone https://github.com/suu990901/Klear_Reasoner.git
