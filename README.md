@@ -202,6 +202,9 @@ YOUR_TEST_FILE="<test_data_path>"
 ```
 
 ---
+## 🤝 Citation
+
+Our paper is coming soon, stay tuned.
 
 <!-- ## 🔍 Key Techniques
 | Component | Description |
