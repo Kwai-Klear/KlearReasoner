@@ -120,8 +120,6 @@ where
 
 ![condtion](https://github.com/suu990901/KlearReasoner/blob/main/docker/CodeCogsEqn_2.svg)
 
-
-- **Bounded** gradients avoid explosion.  
 - **Never zero** → every token contributes to learning.
 
 
