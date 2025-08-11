@@ -8,10 +8,10 @@ export NCCL_IB_HCA=mlx5
 
 set -xeuo pipefail
 
-YOUR_MODEL_PATH=
-CKPTS_SAVE_DIR=
-YOUR_TRAIN_FILE=
-YOUR_TEST_FILE=
+YOUR_MODEL_PATH="<your_model_path>"
+CKPTS_SAVE_DIR="<ckpts_save_path>"
+YOUR_TRAIN_FILE="<train_data_path>"
+YOUR_TEST_FILE="<test_data_path>"
 
 project_name='Your_project_name'
 exp_name='Your_exp_name'
