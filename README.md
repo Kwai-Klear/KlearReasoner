@@ -232,6 +232,7 @@ YOUR_TEST_FILE="<test_data_path>"
 
 ---
 ## 🤝 Citation
+If you find this work helpful, please cite our paper:
 ```bibtex
 @misc{su2025klearreasoneradvancingreasoningcapability,
       title={Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization}, 
