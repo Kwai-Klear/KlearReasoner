@@ -232,8 +232,17 @@ YOUR_TEST_FILE="<test_data_path>"
 
 ---
 ## 🤝 Citation
-
-Our paper is coming soon, stay tuned.
+```bibtex
+@misc{su2025klearreasoneradvancingreasoningcapability,
+      title={Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization}, 
+      author={Zhenpeng Su and Leiyu Pan and Xue Bai and Dening Liu and Guanting Dong and Jiaming Huang and Wenping Hu and Guorui Zhou},
+      year={2025},
+      eprint={2508.07629},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2508.07629}, 
+}
+```
 
 <!-- ## 🔍 Key Techniques
 | Component | Description |
