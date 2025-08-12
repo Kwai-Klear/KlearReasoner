@@ -141,7 +141,7 @@ Empirically we set $\beta_1 = \beta_2 = 1$.
 <div align="center">
 <img src="./docker/GPPO.png" width="100%"/>
 
-<sub>Comparison of GPPO, GRPO w/ Clip Higher, and CISPO in mathematical RL training.</sub>
+<sub>Comparison of GPPO, GRPO w/ Clip Higher, and CISPO in mathematical RL training. Both methods are trained from an earlier long-CoT SFT checkpoint with a sequence length of 32K tokens. For GRPO, we use the Clip-Higher strategy from DAPO with the recommended $$\epsilon_h = 0.28$$.</sub>
 </div>
 
 ---
