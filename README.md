@@ -192,6 +192,8 @@ The format for a single code entry is as follows:
 
 Here, the data_source field is set to "coder1_longcot".
 
+The data_source field affects the choice of verifier.
+
 ### Using Ray for Multi-Node Training
 For multi-node training​​, ensure ​​all nodes are started and connected via Ray​​ before executing the training script. Below is a brief setup guide for Ray across multiple machines:
 #### Step 1: Start Ray on the Head Node (node0)
@@ -229,6 +231,9 @@ CKPTS_SAVE_DIR="<ckpts_save_path>"
 YOUR_TRAIN_FILE="<train_data_path>"
 YOUR_TEST_FILE="<test_data_path>"
 ```
+
+### Evaluation
+Evaluation is coming soon, stay tuned.
 
 ---
 ## 🤝 Citation
