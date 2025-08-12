@@ -179,13 +179,17 @@ For the code, we use [Firejail](https://github.com/netblue30/firejail) for the *
 
 ### Training Data Format
 Please refer to the format of the two provided datasets, Axx and Bxx, for the training data. The format for a single math entry is as follows:  
+```json
 {"data_source": "math_longcot_math_verify", "prompt": [{"content": "Let $n=9867$. If you calculated $n^{3}-n^{2}$, what would be the unit digit found?\n(a) 0\n(b) 2\n(c) 4\n(d) 6\n(e) 8", "role": "user"}], "ability": "math", "reward_model": {"ground_truth": "4", "style": "rule"}, "__index_level_0__": "29999"}  
+```
   
 Here, the data_source field is set to "math_longcot_math_verify".  
 
 The format for a single code entry is as follows:  
+```json
 {"hash": "47c43857280be8a7557cc36b998b3012", "ability": "code", "data_source": "coder1_longcot", "prompt": [{"content": "You are an expert Python programmer. You will be given a question (problem specification) and will generate a correct Python program that matches the specification and passes all tests.\n\nTakahashi is planning to eat N dishes.\nThe i-th dish he plans to eat is sweet if S_i = sweet, and salty if S_i = salty.\nIf he eats two sweet dishes consecutively, he will feel sick and be unable to eat any more dishes.\nDetermine whether he can eat all the dishes...", "role": "user"}], "reward_model": {"ground_truth": "...", "style": "rule"}}  
-  
+```
+
 Here, the data_source field is set to "coder1_longcot".
 
 ### Using Ray for Multi-Node Training
