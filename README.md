@@ -233,7 +233,7 @@ YOUR_TEST_FILE="<test_data_path>"
 ```
 
 ### Evaluation
-Evaluation is coming soon, stay tuned.
+**Evaluation is coming soon, stay tuned.**
 
 ---
 ## 🤝 Citation
