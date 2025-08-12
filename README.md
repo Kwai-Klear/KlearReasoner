@@ -192,7 +192,7 @@ The format for a single code entry is as follows:
 
 Here, the data_source field is set to "coder1_longcot".
 
-The data_source field affects the choice of verifier.
+**The data_source field affects the choice of verifier.**
 
 ### Using Ray for Multi-Node Training
 For multi-node training​​, ensure ​​all nodes are started and connected via Ray​​ before executing the training script. Below is a brief setup guide for Ray across multiple machines:
@@ -233,7 +233,7 @@ YOUR_TEST_FILE="<test_data_path>"
 ```
 
 ### Evaluation
-**Evaluation is coming soon, stay tuned.**
+Evaluation is coming soon, stay tuned.        
 
 ---
 ## 🤝 Citation
