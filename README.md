@@ -233,7 +233,7 @@ YOUR_TEST_FILE="<test_data_path>"
 ```
 
 ### Evaluation
-Evaluation is coming soon, stay tuned.        
+When we expand the inference budget to 64K and adopt the YaRN method with a scaling factor of 2.5. **Evaluation is coming soon, stay tuned.**   
 
 ---
 ## 🤝 Citation
