@@ -137,6 +137,13 @@ For finer-grained control:
 
 Empirically we set $\beta_1 = \beta_2 = 1$.
 
+### Experiment
+<div align="center">
+<img src="./docker/GPPO.png" width="100%"/>
+
+<sub>Comparison of GPPO, GRPO w/ Clip Higher, and CISPO in mathematical RL training.</sub>
+</div>
+
 ---
 
 ## 📊 Benchmark Results (Pass@1)
