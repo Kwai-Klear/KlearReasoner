@@ -175,7 +175,7 @@ git clone https://github.com/suu990901/Klear_Reasoner
 cd Klear_Reasoner
 pip install -r requirements.txt
 ```
-For the code, we use [Firejail](https://github.com/netblue30/firejail) for the **sandbox** environment. Additionally, we implemented multi-process control based on [Pebble](https://github.com/noxdafox/pebble), which allows users to reclaim all resources allocated to a task when execution times out. For mathematics, we use [math_verify](https://github.com/huggingface/Math-Verify) for judging.
+For the code, we use [Firejail](https://github.com/netblue30/firejail) for the **sandbox** environment. Additionally, we implemented multi-process control based on [Pebble](https://github.com/noxdafox/pebble), enabling automatic resource reclamation upon task timeout. For mathematics, we use [math_verify](https://github.com/huggingface/Math-Verify) for judging.
 
 ### Training Data Format
 Please refer to the format of the two provided datasets, [Math RL](https://huggingface.co/datasets/Suu/KlearReasoner-MathSub-30K) and [Code RL](https://huggingface.co/datasets/Suu/KlearReasoner-CodeSub-15K), for the training data. The format for a single math entry is as follows:  
