@@ -6,6 +6,7 @@ We present Klear-Reasoner, a model with long reasoning capabilities that demonst
 | Resource | Link |
 |---|---|
 | 📝 Preprints | [Paper](https://arxiv.org/pdf/2508.07629) |
+| 🤗 Model Hub | [Klear-Reasoner-8B](https://huggingface.co/klear-team/klear-reasoner-8b-SFT) |
 | 🤗 Model Hub | [Klear-Reasoner-8B](https://huggingface.co/klear-team/klear-reasoner-8b) |
 | 🤗 Dataset Hub | [Math RL](https://huggingface.co/datasets/Suu/KlearReasoner-MathSub-30K) |
 | 🤗 Dataset Hub | [Code RL](https://huggingface.co/datasets/Suu/KlearReasoner-CodeSub-Rllm-Cleaned) |
@@ -19,6 +20,7 @@ We present Klear-Reasoner, a model with long reasoning capabilities that demonst
 |---|---|
 | 📝 Preprints | [Paper](https://arxiv.org/pdf/2508.07629) |
 | 🤗 Daily Paper | [Paper](https://huggingface.co/papers/2508.07629) |
+| 🤗 Model Hub | [Klear-Reasoner-8B](https://huggingface.co/klear-team/klear-reasoner-8b-SFT) |
 | 🤗 Model Hub | [Klear-Reasoner-8B](https://huggingface.co/Suu/Klear-Reasoner-8B) |
 | 🤗 Dataset Hub | [Math RL](https://huggingface.co/datasets/Suu/KlearReasoner-MathSub-30K) |
 | 🤗 Dataset Hub | [Code RL](https://huggingface.co/datasets/Suu/KlearReasoner-CodeSub-15K) |
