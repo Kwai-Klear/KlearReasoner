@@ -47,7 +47,7 @@ def code_exec_firejail(code, stdin: str = None, timeout=_DEFAULT_TIMEOUT_SECONDS
             with open(os.path.join(tmpdir, "test_solution.py"), "w") as f:
                 f.write(pytest)
             command.insert(4, f"--whitelist={tmpdir}")
-            command.extend(["/share/miniconda3/envs/verl_v0_szp/bin/python", "-m", "pytest", tmpdir])
+            command.extend(["python", "-m", "pytest", tmpdir])
             try:
                 result = subprocess.run(
                     command,
@@ -59,13 +59,13 @@ def code_exec_firejail(code, stdin: str = None, timeout=_DEFAULT_TIMEOUT_SECONDS
                     timeout=timeout + 3,
                 )
             except subprocess.TimeoutExpired:
-                return False, _ERROR_MSG_PREFIX + "执行超时，进程被强制终止"
+                return False, _ERROR_MSG_PREFIX + "Execution timeout, the process is forcibly terminated"
     else:
         with NamedTemporaryFile() as tmp:
             tmp.write(code.encode())
             tmp.flush()
             command.insert(4, f"--whitelist={tmp.name}")
-            command.extend(["/share/miniconda3/envs/verl_v0_szp/bin/python", tmp.name])
+            command.extend(["python", tmp.name])
             try:
                 result = subprocess.run(command,
                                     input=stdin.encode() if stdin else None,
@@ -76,7 +76,7 @@ def code_exec_firejail(code, stdin: str = None, timeout=_DEFAULT_TIMEOUT_SECONDS
                                     timeout=timeout)
             except subprocess.TimeoutExpired:
                 print("Timeout")
-                return False, _ERROR_MSG_PREFIX + "执行超时，进程被强制终止"
+                return False, _ERROR_MSG_PREFIX + "Execution timeout, the process is forcibly terminated"
 
     stderr = result.stderr.decode().strip()
     stdout = result.stdout.decode()
