@@ -428,7 +428,7 @@ def compute_policy_loss(
     ) 
     pg_clipfrac = verl_F.masked_mean(torch.gt(pg_losses2, pg_losses1).float(), response_mask)
 
-    pg_losses3 = -advantages # dual clip
+    pg_losses3 = -advantages * clip_ratio_c
 
     clip_pg_losses2 = torch.min(pg_losses3, clip_pg_losses1)
     pg_clipfrac_lower = verl_F.masked_mean(
@@ -508,7 +508,7 @@ def compute_gppo_loss(
     ) 
     pg_clipfrac = verl_F.masked_mean(torch.gt(pg_losses2, pg_losses1).float(), response_mask)
 
-    pg_losses3 = -advantages # dual clip
+    pg_losses3 = -advantages * clip_ratio_c
 
     clip_pg_losses2 = torch.min(pg_losses3, clip_pg_losses1)
     pg_clipfrac_lower = verl_F.masked_mean(
