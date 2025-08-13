@@ -263,13 +263,14 @@ If you find this work helpful, please cite our paper:
 
 <!-- ## 🤝 Citation
 ```bibtex
-@misc{klear2025reasoner,
-  title={Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization},
-  author={Su, Zhenpeng and Pan, Leiyu and Bai, Xue and Liu, Dening and Dong, Guanting and Huang, Jiaming and Hu, Wenping and Zhang, Fuzheng and Zhou, Guorui},
-  year={2025},
-  eprint={250x.xxxxx},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL}
+@misc{su2025klearreasoneradvancingreasoningcapability,
+      title={Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization}, 
+      author={Zhenpeng Su and Leiyu Pan and Xue Bai and Dening Liu and Guanting Dong and Jiaming Huang and Wenping Hu and Fuzheng Zhang and Kun Gai and Guorui Zhou},
+      year={2025},
+      eprint={2508.07629},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2508.07629}, 
 }
 ``` -->
 
