@@ -27,7 +27,7 @@ We present Klear-Reasoner, a model with long reasoning capabilities that demonst
 
 ---
 
-⚠️ The ​​dual-clip​​ section in the code before ​​8:50 on 8.13​​ had an issue, which has now been fixed. Please update your code accordingly. For details, see the [commit](https://github.com/suu990901/KlearReasoner/commit/e0f7bb1141ae258dd86ee23ebb622a406fdca183).
+
 
 ## 📌 Overview
 
