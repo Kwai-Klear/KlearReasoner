@@ -328,7 +328,7 @@ YOUR_TEST_FILE="<test_data_path>"
 
 It is worth noting that for training stability, if you train with a sequence length shorter than 32K, we recommend enabling **actor_rollout_ref.actor.overlong_filter=True**, as this filters out samples in the rollout that exceed the maximum sequence length. 
 
-We observed that when training with a 32K sequence length, the model can still optimize stably even with actor_rollout_ref.actor.overlong_filter=False. However, if the maximum sequence length is below 32K, training becomes highly unstable—regardless of whether GPPO or GRPO is used.
+We observed that when training with a 32K sequence length, the model can still optimize stably even with actor_rollout_ref.actor.overlong_filter=False. However, if the maximum sequence length is below 32K, training becomes highly unstable, regardless of whether GPPO or GRPO is used.
 
 ### Evaluation
 When we expand the inference budget to 64K and adopt **the YaRN method with a scaling factor of 2.5**. **Evaluation is coming soon, stay tuned.**   
