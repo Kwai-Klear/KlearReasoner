@@ -144,7 +144,7 @@ Empirically we set $\beta_1 = \beta_2 = 1$.
 
 ### Implementation of GPPO
 The loss of GPPO only requires modifying **one line of code** based on the PPO/GPPO loss:
-<span style="color: #cccccc">*-advantages * torch.clamp(ratio, (1 - cliprange_low) / **ratio.detach() * ratio**, (1 + cliprange_high) / **ratio.detach() * ratio**)*</span> 
+==*-advantages * torch.clamp(ratio, (1 - cliprange_low) / **ratio.detach() * ratio**, (1 + cliprange_high) / **ratio.detach() * ratio**)==
 
 The complete loss implementation is as follows:
 ```python
