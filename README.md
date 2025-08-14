@@ -54,6 +54,7 @@ The model combines:
 
 ### 1. Install Dependencies
 ```bash
+pip install -e .
 pip install -r requirements.txt
 ``` -->
 
