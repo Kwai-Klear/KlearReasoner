@@ -327,6 +327,8 @@ YOUR_TEST_FILE="<test_data_path>"
 
 ### Evaluation
 When we expand the inference budget to 64K and adopt the YaRN method with a scaling factor of 2.5. **Evaluation is coming soon, stay tuned.**   
+The evaluation data for AIME24, AIME25, and HMMT2025 are available in our GitHub repository under the benchmarks directory.
+For LiveCodeBench, please download the data from the official website.
 
 ---
 ## 🤝 Citation
