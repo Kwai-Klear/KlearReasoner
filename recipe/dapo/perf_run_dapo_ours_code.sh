@@ -59,7 +59,6 @@ WANDB_DIR="${CKPTS_DIR}/${_time}"
 mkdir -p $WANDB_DIR
 RUNTIME_ENV=${CKPTS_DIR}/runtime_env.yaml
 
-# 更新wandb环境变量
 sed -e "s|WANDB_DIR:.*|WANDB_DIR: \"$WANDB_DIR\"|" $FREEZE_RUNTIME_ENV > $RUNTIME_ENV
 
 TRAIN_FILE=$YOUR_TRAIN_FILE
@@ -99,7 +98,7 @@ ray job submit --no-wait --runtime-env="${RUNTIME_ENV}" \
     actor_rollout_ref.actor.clip_ratio_low=${clip_ratio_low} \
     actor_rollout_ref.actor.clip_ratio_high=${clip_ratio_high} \
     actor_rollout_ref.actor.clip_ratio_c=10.0 \
-    actor_rollout_ref.actor.postive_loss_coeff=0.1 \
+    actor_rollout_ref.actor.positive_loss_coeff=0.1 \
     algorithm.filter_groups.enable=${enable_filter_groups} \
     algorithm.filter_groups.max_num_gen_batches=${max_num_gen_batches} \
     algorithm.filter_groups.metric=${filter_groups_metric} \

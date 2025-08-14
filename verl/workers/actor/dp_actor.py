@@ -347,12 +347,12 @@ class DataParallelPPOActor(BasePPOActor):
                         micro_batch=data, temperature=temperature, calculate_entropy=calculate_entropy
                     )
 
-                    postive_loss = torch.tensor(0)
+                    positive_loss = torch.tensor(0)
                     if reward.any():
                         postive_log_prob = log_prob[reward]
                         response_mask_tmp = response_mask[reward]
                         postive_log_prob = -1.0 * postive_log_prob
-                        postive_loss = agg_loss(postive_log_prob, loss_mask=response_mask_tmp, loss_agg_mode=loss_agg_mode)
+                        positive_loss = agg_loss(postive_log_prob, loss_mask=response_mask_tmp, loss_agg_mode=loss_agg_mode)
 
                     pg_loss, pg_clipfrac, ppo_kl, pg_clipfrac_lower = compute_policy_loss(
                         old_log_prob=old_log_prob,
@@ -375,8 +375,8 @@ class DataParallelPPOActor(BasePPOActor):
                         entropy_loss = agg_loss(loss_mat=entropy, loss_mask=response_mask, loss_agg_mode=loss_agg_mode)
                         policy_loss = pg_loss
 
-                    if self.config.postive_loss_coeff != 0:
-                        policy_loss = self.config.postive_loss_coeff * postive_loss + policy_loss
+                    if self.config.positive_loss_coeff != 0:
+                        policy_loss = self.config.positive_loss_coeff * positive_loss + policy_loss
 
                     if self.config.use_kl_loss:
                         ref_log_prob = data["ref_log_prob"]
@@ -405,7 +405,7 @@ class DataParallelPPOActor(BasePPOActor):
                         "actor/pg_clipfrac": pg_clipfrac.detach().item(),
                         "actor/ppo_kl": ppo_kl.detach().item(),
                         "actor/pg_clipfrac_lower": pg_clipfrac_lower.detach().item(),
-                        "actor/postive_loss": postive_loss.detach().item()
+                        "actor/positive_loss": positive_loss.detach().item()
                     }
                     append_to_dict(metrics, data)
 
