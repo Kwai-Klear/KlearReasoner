@@ -330,8 +330,10 @@ It is worth noting that for training stability, if you train with a sequence len
 
 We observed that when training with a 32K sequence length, the model can still optimize stably even with actor_rollout_ref.actor.overlong_filter=False. However, if the maximum sequence length is reduced to 16K, training becomes highly unstable, regardless of whether GPPO or GRPO is used.
 
+**Our exploration of GPPO is still ongoing, so stay tuned.**
+
 ### Evaluation
-When we expand the inference budget to 64K and adopt **the YaRN method with a scaling factor of 2.5**. **Evaluation is coming soon, stay tuned.**   
+When we expand the inference budget to 64K and adopt **the YaRN method with a scaling factor of 2.5**. 
 
 The evaluation data for AIME24, AIME25, and HMMT2025 are available in our GitHub repository under the **benchmarks directory**.
 For LiveCodeBench, please download the data from the official website.
