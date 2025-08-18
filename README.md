@@ -344,7 +344,7 @@ If you find this work helpful, please cite our paper:
 ```bibtex
 @misc{su2025klearreasoneradvancingreasoningcapability,
       title={Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization}, 
-      author={Zhenpeng Su and Leiyu Pan and Xue Bai and Dening Liu and Guanting Dong and Jiaming Huang and Wenping Hu and Guorui Zhou},
+      author={Zhenpeng Su and Leiyu Pan and Xue Bai and Dening Liu and Guanting Dong and Jiaming Huang and Wenping Hu and Fuzheng Zhang and Kun Gai and Guorui Zhou},
       year={2025},
       eprint={2508.07629},
       archivePrefix={arXiv},
@@ -353,29 +353,4 @@ If you find this work helpful, please cite our paper:
 }
 ```
 
-<!-- ## 🔍 Key Techniques
-| Component | Description |
-|---|---|
-| **GPPO** | Gradient-Preserving Clipping Policy Optimization. Retains clipped-token gradients; stabilizes training while boosting exploration. |
-| **Soft Reward** | For code tasks, reward = (passed tests / total tests) instead of binary 0/1. |
-| **Zero-Advantage Filtering** | Removes prompt groups whose advantages are all zero → clearer gradients. |
-| **YaRN Extension** | Extends context to 64 K tokens during inference for better long-CoT reasoning. | -->
-
-
-<!-- --- -->
-
-<!-- ## 🤝 Citation
-```bibtex
-@misc{su2025klearreasoneradvancingreasoningcapability,
-      title={Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization}, 
-      author={Zhenpeng Su and Leiyu Pan and Xue Bai and Dening Liu and Guanting Dong and Jiaming Huang and Wenping Hu and Fuzheng Zhang and Kun Gai and Guorui Zhou},
-      year={2025},
-      eprint={2508.07629},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2508.07629}, 
-}
-``` -->
-
-<!-- --- -->
 
