@@ -34,7 +34,7 @@ def create_parser():
                             help="RoPE scaling type, such as 'linear', 'dynamic', etc.")
     engine_group.add_argument("--gpu-memory-utilization", type=float, default=0.9,
                             help="Target GPU memory utilization (0.0 to 1.0)")
-    engine_group.add_argument("--tensor-parallel-size", type=int, default=8,
+    engine_group.add_argument("--tensor-parallel-size", type=int, default=2,
                             help="Tensor parallelism degree")
     engine_group.add_argument("--max-num-seqs", type=int, default=128,
                             help="Maximum number of sequences")
@@ -118,6 +118,7 @@ def main(args: dict):
         enable_prefix_caching=True,
         max_num_seqs=args.get("max_num_seqs", 128),
         hf_overrides=hf_overrides,
+        enforce_eager=False,
         seed=args.get("seed", 0),
     )
   
