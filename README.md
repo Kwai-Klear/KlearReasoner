@@ -338,6 +338,14 @@ When we expand the inference budget to 64K and adopt **the YaRN method with a sc
 The evaluation data for AIME24, AIME25, and HMMT2025 are available in our GitHub repository under the **benchmarks directory**.
 For LiveCodeBench, please download the data from the official website.
 
+You can run the following commands to perform inference and evaluation:  
+```bash
+git clone https://github.com/suu990901/KlearReasoner  
+cd KlearReasoner/benchmarks  
+python inference.py --model <KlearReasoner-8B_path> --n 64 --dataset_path ./benchmarks/aime24.qs.jsonl  
+python judge_math.py <path_to_inference_results>
+```
+
 ---
 ## 🤝 Citation
 If you find this work helpful, please cite our paper:
