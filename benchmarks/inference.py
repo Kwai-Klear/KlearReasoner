@@ -16,7 +16,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[logging.StreamHandler(sys.stdout)]
 )
-logger = logging.getLogger("v")
+logger = logging.getLogger("vLLM")
 
 def create_parser():
     parser = FlexibleArgumentParser()
@@ -119,7 +119,6 @@ def main(args: dict):
         max_num_seqs=args.get("max_num_seqs", 128),
         hf_overrides=hf_overrides,
         seed=args.get("seed", 0),
-        repetition_penalty=1.05
     )
   
     logger.info("vLLM engine initialization completed")
@@ -130,7 +129,8 @@ def main(args: dict):
         temperature=temperature,
         top_p=top_p,
         top_k=top_k,
-        seed=args.get("seed", 0)
+        seed=args.get("seed", 0),
+        repetition_penalty=1.05
     )
     print(sampling_params)
 
@@ -140,7 +140,7 @@ def main(args: dict):
 
 def process_data_batch(llm, data_list, sampling_params, output_dir, batch_size):
     """Process data using batch processing and write results in real-time"""
-    results_file = os.path.join(output_dir, "inference_results.jsonl")
+    results_file = os.path.join(output_dir, "inference_results_105.jsonl")
     
     # Track number of processed items
     processed_count = 0
