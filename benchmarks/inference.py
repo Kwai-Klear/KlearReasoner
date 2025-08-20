@@ -16,7 +16,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[logging.StreamHandler(sys.stdout)]
 )
-logger = logging.getLogger("vLLM")
+logger = logging.getLogger("v")
 
 def create_parser():
     parser = FlexibleArgumentParser()
@@ -119,7 +119,7 @@ def main(args: dict):
         max_num_seqs=args.get("max_num_seqs", 128),
         hf_overrides=hf_overrides,
         seed=args.get("seed", 0),
-
+        repetition_penalty=1.05
     )
   
     logger.info("vLLM engine initialization completed")
