@@ -46,7 +46,7 @@ def main(data_path):
         for line in tqdm(f):
             data = json.loads(line)
             try:
-                response = remove_think(data["messages"][-1]["content"])
+                response = data["messages"][-1]["content"]
                 answer = data["meta"]["meta"]["solution"].strip()
 
                 if isinstance(response, list):
@@ -72,12 +72,6 @@ def main(data_path):
                 data["is_correct"] = -1.0
             result_data_list.append(data)
 
-    for idx, data in tqdm(enumerate(result_data_list)):
-        if data["is_correct"] != 1:
-            data["id"] = idx % 30
-            data["meta"]["messages"][-1]["content"] = remove_think(data["meta"]["messages"][-1]["content"])
-            data["messages"][-1]["content"] = remove_think(data["messages"][-1]["content"])
-            # print(json.dumps(data, ensure_ascii=False))
     counter = Counter()
 
     for idx, data in tqdm(enumerate(result_data_list)):
