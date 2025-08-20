@@ -130,7 +130,6 @@ def main(args: dict):
         temperature=temperature,
         top_p=top_p,
         top_k=top_k,
-        seed=args.get("seed", 0),
         repetition_penalty=1.05
     )
     print(sampling_params)
