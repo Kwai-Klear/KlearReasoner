@@ -355,8 +355,8 @@ You can run the following commands to perform inference and evaluation:
 ```bash
 git clone https://github.com/suu990901/KlearReasoner  
 cd KlearReasoner/benchmarks  
-python inference.py --model <KlearReasoner-8B_path> --n 64 --dataset_path ./benchmarks/aime24.qs.jsonl  
-python judge_math.py <path_to_inference_results>
+python inference.py --model "<KlearReasoner-8B_path>" --n 64 --dataset_path ./benchmarks/aime24.qs.jsonl  
+python judge_math.py "<path_to_inference_results>"
 ```
 
 ---
