@@ -28,7 +28,8 @@ from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
 import verl.utils.torch_functional as verl_F
 from verl import DataProto
 from verl.trainer.ppo.core_algos import agg_loss,  kl_penalty
-from verl.trainer.ppo.core_algos import compute_gppo_loss as compute_policy_loss
+# from verl.trainer.ppo.core_algos import compute_gppo_loss as compute_policy_loss
+from verl.trainer.ppo.core_algos import compute_gppo_loss, compute_policy_loss, compute_gppo_loss_general_beta
 from verl.utils.debug import GPUMemoryLogger
 from verl.utils.py_functional import append_to_dict
 from verl.utils.seqlen_balancing import get_reverse_idx, rearrange_micro_batches
@@ -354,17 +355,47 @@ class DataParallelPPOActor(BasePPOActor):
                         postive_log_prob = -1.0 * postive_log_prob
                         positive_loss = agg_loss(postive_log_prob, loss_mask=response_mask_tmp, loss_agg_mode=loss_agg_mode)
 
-                    pg_loss, pg_clipfrac, ppo_kl, pg_clipfrac_lower = compute_policy_loss(
-                        old_log_prob=old_log_prob,
-                        log_prob=log_prob,
-                        advantages=advantages,
-                        response_mask=response_mask,
-                        cliprange=clip_ratio,
-                        cliprange_low=clip_ratio_low,
-                        cliprange_high=clip_ratio_high,
-                        clip_ratio_c=clip_ratio_c,
-                        loss_agg_mode=loss_agg_mode,
-                    )
+                    if self.config.loss_func == "grpo":
+                        pg_loss, pg_clipfrac, ppo_kl, pg_clipfrac_lower = compute_policy_loss(
+                            old_log_prob=old_log_prob,
+                            log_prob=log_prob,
+                            advantages=advantages,
+                            response_mask=response_mask,
+                            cliprange=clip_ratio,
+                            cliprange_low=clip_ratio_low,
+                            cliprange_high=clip_ratio_high,
+                            clip_ratio_c=clip_ratio_c,
+                            loss_agg_mode=loss_agg_mode,
+                        )
+                    elif self.config.loss_func == "gppo":
+                        pg_loss, pg_clipfrac, ppo_kl, pg_clipfrac_lower = compute_gppo_loss(
+                            old_log_prob=old_log_prob,
+                            log_prob=log_prob,
+                            advantages=advantages,
+                            response_mask=response_mask,
+                            cliprange=clip_ratio,
+                            cliprange_low=clip_ratio_low,
+                            cliprange_high=clip_ratio_high,
+                            clip_ratio_c=clip_ratio_c,
+                            loss_agg_mode=loss_agg_mode,
+                            only_high=self.config.only_high
+                        )
+                    elif self.config.loss_func == "gppo_general":
+                        pg_loss, pg_clipfrac, ppo_kl, pg_clipfrac_lower = compute_gppo_loss_general_beta(
+                            old_log_prob=old_log_prob,
+                            log_prob=log_prob,
+                            advantages=advantages,
+                            response_mask=response_mask,
+                            cliprange=clip_ratio,
+                            cliprange_low=clip_ratio_low,
+                            cliprange_high=clip_ratio_high,
+                            clip_ratio_c=clip_ratio_c,
+                            loss_agg_mode=loss_agg_mode,
+                            gppo_loss_beta1=self.config.gppo_loss_beta1,
+                            gppo_loss_beta2=self.config.gppo_loss_beta2
+                        )
+                    else:
+                        raise ValueError("Loss Function Name Error")
 
                     if entropy_coeff != 0:
                         entropy_loss = agg_loss(loss_mat=entropy, loss_mask=response_mask, loss_agg_mode=loss_agg_mode)

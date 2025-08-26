@@ -330,7 +330,20 @@ It is worth noting that for training stability, if you train with a sequence len
 
 We observed that when training with a 32K sequence length, the model can still optimize stably even with actor_rollout_ref.actor.overlong_filter=False. However, if the maximum sequence length is reduced to 16K, training becomes highly unstable, regardless of whether GPPO or GRPO is used.
 
+### More Exploration
 **Our exploration of GPPO is still ongoing, so stay tuned.**
+Although we can maintain stability when using native GPPO training on KlearReasoner-8B, we later discovered in other internal business models that if the gradient on the low side of the PPO clip range is too large, it can restrict exploration and lead to entropy collapse. To address this issue, we propose two solutions:
+
+• General Form of GPPO: Reducing the hyperparameter beta1 can decrease the gradient backpropagated from the low side of the clip range. Based on our preliminary experiments, setting beta1 to 0.25 or 0.5 and beta2 to 1 yields good performance. Example script:
+```bash
+bash recipe/dapo/perf_run_dapo_ours_math_general_gppo.sh # For Math RL
+```
+
+• Retaining only the gradient from the high side of the clip range: This approach significantly alleviates entropy collapse and encourages the model to explore. Example script:
+```bash
+bash recipe/dapo/perf_run_dapo_ours_math_only_high.sh # For Math RL
+```
+
 
 ### Evaluation
 When we expand the inference budget to 64K and adopt **the YaRN method with a scaling factor of 2.5**. 

@@ -46,8 +46,7 @@ actor_rollout_ref:
     entropy_coeff: 0
     positive_loss_coeff: 0
     loss_func: "gppo"
-    only_high: False
-    gppo_loss_beta1: 0.25
+    gppo_loss_beta1: 1.0
     gppo_loss_beta2: 1.0
     use_kl_loss: False # True for GRPO
     use_torch_compile: True # False to disable torch compile
