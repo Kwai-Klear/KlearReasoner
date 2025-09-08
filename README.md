@@ -102,7 +102,7 @@ Two side-effects appear:
 - **Negative trajectories** (small $r$, negative advantage) are ignored → slower correction.
 
 
-### GPPO Surrogate Loss (Token-Level GRPO)  
+### GPPO
 
 Let  
 - $\delta = r_t^{(j)}(\theta)=\pi_\theta/\pi_{\text{old}}$ (importance ratio)  
