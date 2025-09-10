@@ -49,7 +49,7 @@ torchvision==0.21.0
 tqdm==4.67.1
 transformers==4.51.3
 triton==3.2.0
-vllm==0.8.2
+vllm==0.8.5
 wandb==0.19.9
 xformers==0.0.29.post2
 yarl==1.20.0
