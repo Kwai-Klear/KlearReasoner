@@ -363,14 +363,29 @@ python judge_math.py "<path_to_inference_results>"
 ## 🤝 Citation
 If you find this work helpful, please cite our paper:
 ```bibtex
-@misc{su2025klearreasoneradvancingreasoningcapability,
-      title={Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization}, 
-      author={Zhenpeng Su and Leiyu Pan and Xue Bai and Dening Liu and Guanting Dong and Jiaming Huang and Wenping Hu and Fuzheng Zhang and Kun Gai and Guorui Zhou},
-      year={2025},
-      eprint={2508.07629},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2508.07629}, 
+@article{DBLP:journals/corr/abs-2508-07629,
+  author       = {Zhenpeng Su and
+                  Leiyu Pan and
+                  Xue Bai and
+                  Dening Liu and
+                  Guanting Dong and
+                  Jiaming Huang and
+                  Wenping Hu and
+                  Fuzheng Zhang and
+                  Kun Gai and
+                  Guorui Zhou},
+  title        = {Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving
+                  Clipping Policy Optimization},
+  journal      = {CoRR},
+  volume       = {abs/2508.07629},
+  year         = {2025},
+  url          = {https://doi.org/10.48550/arXiv.2508.07629},
+  doi          = {10.48550/ARXIV.2508.07629},
+  eprinttype    = {arXiv},
+  eprint       = {2508.07629},
+  timestamp    = {Sat, 13 Sep 2025 14:46:27 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2508-07629.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 ```
 
