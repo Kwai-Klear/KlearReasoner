@@ -1,4 +1,19 @@
 # ✨ Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization
+
+## 📣 Latest News
+**September 26, 2025** 🔍 We further explored GPPO in depth and proposed CE-GPPO, focusing on the impact of ppo-clip tokens on entropy. 📄 The paper is available on [arXiv](https://arxiv.org/pdf/2509.20712) and HuggingFace Daily.
+
+**August 12, 2025** 🚀 We released the checkpoint for [KlearReasoner-8B](https://huggingface.co/Kwai-Klear/Klear-Reasoner-8B), along with the training data.
+
+**August 11, 2025** 🔬 KlearReasoner-8B conducted preliminary exploration of GPPO.
+
+**August 11, 2025** 🏆 We released KlearReasoner-8B, achieving SOTA performance among small-scale 7/8B models.
+
+**August 11, 2025** 📢 KlearReasoner is available on [arXiv](https://arxiv.org/pdf/2508.07629) and [HuggingFace Daily](https://huggingface.co/papers/2508.07629).
+
+
+## 📌 Overview
+
 We present Klear-Reasoner, a model with long reasoning capabilities that demonstrates careful deliberation during problem solving, achieving outstanding performance across multiple benchmarks. We investigate two key issues with current clipping mechanisms in RL: Clipping suppresses critical exploration signals and ignores suboptimal trajectories. To address these challenges, we propose **G**radient-**P**reserving clipping **P**olicy **O**ptimization (**GPPO**) that gently backpropagates gradients from clipped tokens.  
 
 
@@ -27,21 +42,6 @@ We present Klear-Reasoner, a model with long reasoning capabilities that demonst
 | 📧 Contact | suzhenpeng13@163.com |
 
 ---
-
-
-## 📣 Latest News
-**September 26, 2025** 🔍 We further explored GPPO in depth and proposed CE-GPPO, focusing on the impact of ppo-clip tokens on entropy. 📄 The paper is available on [arXiv](https://arxiv.org/pdf/2509.20712) and HuggingFace Daily.
-
-**August 12, 2025** 🚀 We released the checkpoint for [KlearReasoner-8B](https://huggingface.co/Kwai-Klear/Klear-Reasoner-8B), along with the training data.
-
-**August 11, 2025** 🔬 KlearReasoner-8B conducted preliminary exploration of GPPO.
-
-**August 11, 2025** 🏆 We released KlearReasoner-8B, achieving SOTA performance among small-scale 7/8B models.
-
-**August 11, 2025** 📢 KlearReasoner is available on [arXiv](https://arxiv.org/pdf/2508.07629) and [HuggingFace Daily](https://huggingface.co/papers/2508.07629).
-
-
-## 📌 Overview
 
 <div align="center">
 <img src="./docker/main_result.png" width="100%"/>
