@@ -8,15 +8,15 @@
 [![Contact](https://img.shields.io/badge/📧%20Contact-Email-blue)](mailto:suzhenpeng13@163.com)
 
 ## 📣 Latest News
-**September 26, 2025** 🔍 We further explored GPPO in depth and proposed CE-GPPO, focusing on the impact of ppo-clip tokens on entropy. 📄 The paper is available on [arXiv](https://arxiv.org/pdf/2509.20712) and HuggingFace Daily.
+**[September 26, 2025]** 🔍 We further explored GPPO in depth and proposed CE-GPPO, focusing on the impact of ppo-clip tokens on entropy. 📄 The paper is available on [arXiv](https://arxiv.org/pdf/2509.20712) and HuggingFace Daily.
 
-**August 12, 2025** 🚀 We released the checkpoint for [KlearReasoner-8B](https://huggingface.co/Kwai-Klear/Klear-Reasoner-8B), along with the training data.
+**[August 12, 2025]** 🚀 We released the checkpoint for [KlearReasoner-8B](https://huggingface.co/Kwai-Klear/Klear-Reasoner-8B), along with the training data.
 
-**August 11, 2025** 🔬 KlearReasoner-8B conducted preliminary exploration of GPPO.
+**[August 11, 2025]** 🔬 KlearReasoner-8B conducted preliminary exploration of GPPO.
 
-**August 11, 2025** 🏆 We released KlearReasoner-8B, achieving SOTA performance among small-scale 7/8B models.
+**[August 11, 2025]** 🏆 We released KlearReasoner-8B, achieving SOTA performance among small-scale 7/8B models.
 
-**August 11, 2025** 📢 KlearReasoner is available on [arXiv](https://arxiv.org/pdf/2508.07629) and [HuggingFace Daily](https://huggingface.co/papers/2508.07629).
+**[August 11, 2025]** 📢 KlearReasoner is available on [arXiv](https://arxiv.org/pdf/2508.07629) and [HuggingFace Daily](https://huggingface.co/papers/2508.07629).
 
 
 ## 📌 Overview
