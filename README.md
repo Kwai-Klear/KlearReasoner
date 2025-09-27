@@ -13,7 +13,7 @@
 </div>
 
 ## 📣 Latest News
-**[September 26, 2025]** 🔍 We further explored GPPO in depth and proposed **CE-GPPO**, focusing on the impact of ppo-clip tokens on entropy. 📄 The paper is available on [arXiv](https://arxiv.org/pdf/2509.20712) and HuggingFace Daily.
+**[September 26, 2025]** 🔍 We further explored GPPO in depth and proposed **CE-GPPO**, focusing on the impact of ppo-clip tokens on entropy. 📄 The paper is available on [arXiv](https://arxiv.org/pdf/2509.20712) and [HuggingFace Daily](https://huggingface.co/papers/2509.20712).
 
 **[August 12, 2025]** 🚀 We released the checkpoint for [KlearReasoner-8B](https://huggingface.co/Kwai-Klear/Klear-Reasoner-8B), along with the training data.
 
