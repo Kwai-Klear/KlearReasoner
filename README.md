@@ -7,7 +7,6 @@
 [![Model](https://img.shields.io/badge/%20Model-Hugging%20Face-2c74d7?logo=huggingface)](https://huggingface.co/Kwai-Klear/Klear-Reasoner-8B)
 [![Dataset](https://img.shields.io/badge/%20Dataset-Math%20RL-2c74d7?logo=huggingface)](https://huggingface.co/datasets/Kwai-Klear/KlearReasoner-MathSub-30K)
 [![Dataset](https://img.shields.io/badge/%20Dataset-Code%20RL-2c74d7?logo=huggingface)](https://huggingface.co/datasets/Kwai-Klear/KlearReasoner-CodeSub-15K)
-[![GitHub issues](https://img.shields.io/badge/🐛%20Issues-GitHub-black?logo=github)](https://github.com/suu990901/KlearReasoner/issues)
 [![Contact](https://img.shields.io/badge/📧%20Contact-Email-blue)](mailto:suzhenpeng13@163.com)
 
 </div>
