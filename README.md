@@ -375,6 +375,19 @@ python judge_math.py "<path_to_inference_results>"
 ## 🤝 Citation
 If you find this work helpful, please cite our paper:
 ```bibtex
+@misc{su2025cegppocontrollingentropygradientpreserving,
+      title={CE-GPPO: Controlling Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning}, 
+      author={Zhenpeng Su and Leiyu Pan and Minxuan Lv and Yuntao Li and Wenping Hu and Fuzheng Zhang and Kun Gai and Guorui Zhou},
+      year={2025},
+      eprint={2509.20712},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2509.20712}, 
+}
+```
+
+
+```bibtex
 @article{DBLP:journals/corr/abs-2508-07629,
   author       = {Zhenpeng Su and
                   Leiyu Pan and
@@ -400,5 +413,4 @@ If you find this work helpful, please cite our paper:
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 ```
-
 
