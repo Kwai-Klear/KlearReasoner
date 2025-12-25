@@ -378,6 +378,16 @@ python judge_math.py "<path_to_inference_results>"
 ## 🤝 Citation
 If you find this work helpful, please cite our paper:
 ```bibtex
+@article{su2025entropy,
+  title={Entropy Ratio Clipping as a Soft Global Constraint for Stable Reinforcement Learning},
+  author={Su, Zhenpeng and Pan, Leiyu and Lv, Minxuan and Mei, Tiehua and Lin, Zijia and Li, Yuntao and Hu, Wenping and Tang, Ruiming and Gai, Kun and Zhou, Guorui},
+  journal={arXiv preprint arXiv:2512.05591},
+  year={2025}
+}
+```
+
+
+```bibtex
 @misc{su2025cegppocontrollingentropygradientpreserving,
       title={CE-GPPO: Controlling Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning}, 
       author={Zhenpeng Su and Leiyu Pan and Minxuan Lv and Yuntao Li and Wenping Hu and Fuzheng Zhang and Kun Gai and Guorui Zhou},
