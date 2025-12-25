@@ -12,6 +12,8 @@
 </div>
 
 ## 📣 Latest News
+**[December 5, 2025]** 🔍 We propose **entropy ratio clipping​** (ERC) to impose a global constraint on the output distribution of the policy model. Experiments demonstrate that ERC can significantly improve the stability of off-policy training. 📄 The paper is available on [arXiv](https://arxiv.org/abs/2512.05591).
+
 **[September 26, 2025]** 🔍 We further explored GPPO in depth and proposed **CE-GPPO**, focusing on the impact of ppo-clip tokens on entropy. 📄 The paper is available on [arXiv](https://arxiv.org/pdf/2509.20712) and [HuggingFace Daily](https://huggingface.co/papers/2509.20712).
 
 **[September 15, 2025]** GPPO brings benefits in others' industrial scenarios. 💼✨ Check the [Xiaohongshu link](http://xhslink.com/o/3MS0x3zuMix ). 🔗
